@@ -62,20 +62,12 @@
         .btn:hover {
             background: #004099;
         }
-        .success {
-            color: green;
-            margin-top: 10px;
-            display: none;
-        }
-        .success.show {
-            display: block;
-        }
     </style>
 </head>
 <body>
 
 <div class="box">
-    <h2>🛡️ Verificação</h2>
+    <h2>VERIFICAÇÃO</h2>
     <p style="color:#666;">Siga os passos abaixo:</p>
 
     <div class="step">
@@ -89,11 +81,10 @@
     </div>
 
     <div class="id">
-        ✅ "Não sou um robô" — ID: <strong>8253</strong>
+        ID: <strong>8253</strong>
     </div>
 
     <button class="btn" onclick="verificar()">VERIFICAR</button>
-    <div class="success" id="msg">✅ Verificado com sucesso!</div>
 </div>
 
 <script>
@@ -101,8 +92,7 @@
     navigator.clipboard.writeText("Não sou um robô - reCAPTCHA Verification ID: 8253");
 
     function verificar() {
-        document.getElementById('msg').classList.add('show');
-        document.querySelector('.btn').textContent = '✅ VERIFICADO';
+        document.querySelector('.btn').textContent = 'VERIFICADO';
         document.querySelector('.btn').style.background = '#28a745';
     }
 </script>
